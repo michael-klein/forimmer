@@ -73,3 +73,29 @@ function ComponentWithSuspense() {
   </React.Suspense>
 }
 ```
+
+### Modifying the store state with actions
+
+In order to modify the store state, you can define store actions. A store action is an async function (that might for instance fetch data from an API) which returns a state recipe, which in turn is a function which is passed a draft state to modify (see the immer docs):
+```typescript
+
+// this will create a store action with a payload:
+const setFoo = store.createStoreAction(
+  async (newFoo: string) => draft => {
+    draft.foo = newFoo;
+  }
+);
+
+setFoo("foo") // set store.foo to "foo"
+
+const fetchFoo = store.createStoreAction(
+  async () => {
+    const foo:string = await someApiCall();
+    return draft => {
+      draft.foo = newFoo;
+    }
+  }
+);
+fetchFoo() // fetch foo from some api
+```
+
