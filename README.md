@@ -3,7 +3,7 @@
 
 ## What is this?
 
-**forimmer** is a functional state store for react apps, which uses [immer](https://github.com/immerjs/immer) for immutability and integrates with the new react [suspense](https://reactjs.org/docs/concurrent-mode-suspense.html) API. It was in part inspired by the excellent [pullstate](https://github.com/lostpebble/pullstate).
+**forimmer** is a experimental functional state store for react apps, which uses [immer](https://github.com/immerjs/immer) for immutability and integrates with the new react [suspense](https://reactjs.org/docs/concurrent-mode-suspense.html) API. It was in part inspired by the excellent [pullstate](https://github.com/lostpebble/pullstate).
 
 The name is just a silly play with words. "immer" means "always" or "ever" in German and "für immer" means "forever". So, forimmer is basically just a fun, bad translation (that you might encounter from actual Germans trying to speak English). I'm not good at naming things.
 
