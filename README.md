@@ -1,4 +1,4 @@
-<h1 align="center">forimmer <img alt="build status" src="https://travis-ci.org/michael-klein/simmer.js.svg?branch=master" /><a href="https://www.npmjs.com/package/forimmer"> <img alt="npm" src="https://img.shields.io/npm/v/forimmer"></a></h1>
+<h1 align="center">forimmer <img alt="build status" src="https://travis-ci.org/michael-klein/simmer.js.svg?branch=master" /><a href="https://www.npmjs.com/package/forimmer"></a> <img alt="npm" src="https://badgen.net/npm/types/tslib"></h1>
 <div align="center"><b>Immutable state store for react apps with suspense integration.</b></div>
 
 ## What is this?
