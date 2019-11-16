@@ -10,6 +10,7 @@
     "dist"
   ],
   "scripts": {
+    "prepublish": "tsdx build",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
