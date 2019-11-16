@@ -1,15 +1,10 @@
-'use strict';
+import produce, { setAutoFreeze } from 'immer';
+import { useRef, useState, useEffect } from 'react';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+setAutoFreeze(true);
 
-var produce = require('immer');
-var produce__default = _interopDefault(produce);
-var React = require('react');
-
-produce.setAutoFreeze(true);
-
-{
-  produce.setAutoFreeze(false);
+if (process.env.NODE_ENV !== 'production') {
+  setAutoFreeze(false);
 }
 
 function createStore(currentState) {
@@ -23,7 +18,7 @@ function createStore(currentState) {
   }
 
   function updateState(producer) {
-    var newState = produce__default(currentState || {}, function (draft) {
+    var newState = produce(currentState || {}, function (draft) {
       return producer(draft);
     });
 
@@ -57,9 +52,9 @@ function createStore(currentState) {
 }
 
 function useStoreState(store, subsetProducer) {
-  var subsetRef = React.useRef();
+  var subsetRef = useRef();
 
-  var _React$useState = React.useState(0),
+  var _React$useState = useState(0),
       reRender = _React$useState[1];
 
   if (subsetRef.current === undefined) {
@@ -70,7 +65,7 @@ function useStoreState(store, subsetProducer) {
     throwSubsetPromise(store, subsetProducer);
   }
 
-  React.useEffect(function () {
+  useEffect(function () {
     var unsub = store.subscribe(function (state) {
       var newSubset = tryToGetSubset(state, subsetProducer);
 
@@ -115,6 +110,5 @@ function tryToGetSubset(state, subsetProducer) {
   return subset;
 }
 
-exports.createStore = createStore;
-exports.useStoreState = useStoreState;
-//# sourceMappingURL=simmer.js.cjs.development.js.map
+export { createStore, useStoreState };
+//# sourceMappingURL=forimmer.esm.js.map
