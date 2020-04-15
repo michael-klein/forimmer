@@ -663,7 +663,7 @@ export function useStoreState<ST extends Store<any>>(
         newSubset === undefined ||
         subsetRef.current === undefined ||
         newSubset.length !== subsetRef.current.length ||
-        newSubset.findIndex(v => !subsetRef.current.includes(v)) > -1
+        newSubset.some((v, i) => subsetRef.current[i] !== v)
       ) {
         subsetRef.current = newSubset;
         reRender(Date.now());
