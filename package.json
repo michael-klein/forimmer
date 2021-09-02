@@ -45,6 +45,6 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "immer": "^5.0.0"
+    "immer": "^9.0.6"
   }
 }
